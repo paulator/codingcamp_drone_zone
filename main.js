@@ -2,7 +2,27 @@
 var table = document.getElementById("table");
 var tableBody = document.getElementById("table-body");
 var loader = document.getElementById("loader")
+var map = document.getElementById("nav-item-map");
+var nav_item_table = document.getElementById("nav-item-table");
+var map_container = document.getElementById("map-container");
 
+var table_label = document.getElementById("nav-item-table-label");
+var map_label = document.getElementById("nav-item-map-label");
+
+map_container.style = "display:none;"
+map.onclick = function () {
+    table.style = "display:none;";
+    map_container.style = "display:block;";
+    map_label.classList.add("active")
+    table_label.classList.remove("active")
+};
+
+nav_item_table.onclick = function () {
+    table.style = "display:table;"
+    map_container.style = "display:none;"
+    map_label.classList.remove("active")
+    table_label.classList.add("active")
+};
 // Loop through the data and generate table rows
 for (var i = 0; i < jsonData.length; i++) {
     if (jsonData[i].muell_gefunden === true) {

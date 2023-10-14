@@ -14,15 +14,18 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Drone Zone</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Table</a>
+          <li class="nav-item" id="nav-item-table">
+            <a class="nav-link active" id="nav-item-table-label" aria-current="page">Table</a>
+          </li>
+          <li class="nav-item" id="nav-item-map">
+            <a class="nav-link" id="nav-item-map-label" aria-current="page">Map</a>
           </li>
         </ul>
       </div>
@@ -34,6 +37,9 @@
       <div class="spinner-grow text-light" style="width: 7rem; height: 7rem;" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
+    </div>
+    <div id="map-container" class="text-light" style="display: none;">
+      <img src="https://picsum.photos/200/300" />
     </div>
     <table id="table" class="table table-dark table-striped" style="opacity: 0;">
       <thead>
