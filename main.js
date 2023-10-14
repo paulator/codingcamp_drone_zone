@@ -1,10 +1,11 @@
 // var jsonData = "./assets/json/koordinaten_test.json"
-
+var table = document.getElementById("table");
 var tableBody = document.getElementById("table-body");
+var loader = document.getElementById("loader")
 
 // Loop through the data and generate table rows
 for (var i = 0; i < jsonData.length; i++) {
-    if(jsonData[i].muell_gefunden === true) {
+    if (jsonData[i].muell_gefunden === true) {
 
         var row = tableBody.insertRow();
         var cell1 = row.insertCell(0);
@@ -12,7 +13,7 @@ for (var i = 0; i < jsonData.length; i++) {
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
         var cell5 = row.insertCell(4);
-    
+
         cell1.textContent = i;
         var image = document.createElement("img");
         image.src = './output/' + jsonData[i].filename;
@@ -24,8 +25,9 @@ for (var i = 0; i < jsonData.length; i++) {
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         cell5.appendChild(checkbox);
-
     }
-
-   
 }
+setTimeout(() => {
+    table.style = "opacity:1;";
+    loader.style = "display:none !important;";
+}, 2000);
